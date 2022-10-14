@@ -1,5 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(6001); // to listen for incoming http connection on port 5001
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
